@@ -12,8 +12,8 @@ var inputHandler = function (e) {
 
     for (var i = 0; i < cards.length; i++) {
         cardHtml = cards[i].innerHTML.toString();
-        if (cardHtml.includes(input)) {
-            cards[i].style.display = "block";
+        if (cardHtml.toLowerCase().includes(input.toLowerCase())) {
+            cards[i].style.display = "inline-block";
         } else {
             cards[i].style.display = "none";
         }
