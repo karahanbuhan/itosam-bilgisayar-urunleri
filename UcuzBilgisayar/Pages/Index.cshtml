@@ -5,7 +5,20 @@
 }
 
 @{
-    var hello = "";
+    var products = "";
+    ProductsHandler handler = new ProductsHandler();
+    foreach (Product product in handler.products)
+    {
+        products += string.Format("""
+            <div class="card">
+                <a><b>Ürün:</b> {0}</a>
+                <a><b>Marka:</b> {1}</a>
+                <a><b>Fiyat:</b> {2}</a>
+                <a><b>Puan:</b> {3}</a>
+                <a><b>Yorum Sayısı:</b> {4}</a>
+            </div>
+        """, product.name, product.brand, product.price, product.rating, product.reviews);
+    }
 
 }
 
@@ -19,91 +32,5 @@
 </div>
 
 <div class="cards">
-    @hello;
-    <div class="card">
-        <a><b>Ürün:</b> LOQE AMD Ryzen 7-7735HS 16GB 512GB SSD 15.6" FHD 144Hz RTX4050 6GB FreeDOS Gaming Laptop 83S0002YTR</a>
-        <a><b>Marka:</b> Lenovo</a>
-        <a><b>Fiyat:</b> 37939</a>
-        <a><b>Puan:</b> 4.1/5</a>
-        <a><b>Yorum Sayısı:</b> 9</a>
-    </div>
-    <div class="card">
-        <a><b>Ürün:</b> LOQE AMD Ryzen 7-7735HS 16GB 512GB SSD 15.6" FHD 144Hz RTX4050 6GB FreeDOS Gaming Laptop 83S0002YTR</a>
-        <a><b>Marka:</b> Lenovo</a>
-        <a><b>Fiyat:</b> 37939</a>
-        <a><b>Puan:</b> 4.1/5</a>
-        <a><b>Yorum Sayısı:</b> 9</a>
-    </div>
-    <div class="card">
-        <a><b>Ürün:</b> LOQE AMD Ryzen 7-7735HS 16GB 512GB SSD 15.6" FHD 144Hz RTX4050 6GB FreeDOS Gaming Laptop 83S0002YTR</a>
-        <a><b>Marka:</b> Lenovo</a>
-        <a><b>Fiyat:</b> 37939</a>
-        <a><b>Puan:</b> 4.1/5</a>
-        <a><b>Yorum Sayısı:</b> 9</a>
-    </div>
-    <div class="card">
-        <a><b>Ürün:</b> LOQE AMD Ryzen 7-7735HS 16GB 512GB SSD 15.6" FHD 144Hz RTX4050 6GB FreeDOS Gaming Laptop 83S0002YTR</a>
-        <a><b>Marka:</b> Lenovo</a>
-        <a><b>Fiyat:</b> 37939</a>
-        <a><b>Puan:</b> 4.1/5</a>
-        <a><b>Yorum Sayısı:</b> 9</a>
-    </div>
-
-    <div class="card">
-        <a><b>Ürün:</b> LOQE AMD Ryzen 7-7735HS 16GB 512GB SSD 15.6" FHD 144Hz RTX4050 6GB FreeDOS Gaming Laptop 83S0002YTR</a>
-        <a><b>Marka:</b> Lenovo</a>
-        <a><b>Fiyat:</b> 37939</a>
-        <a><b>Puan:</b> 4.1/5</a>
-        <a><b>Yorum Sayısı:</b> 9</a>
-    </div>
-    <div class="card">
-        <a><b>Ürün:</b> LOQE AMD Ryzen 7-7735HS 16GB 512GB SSD 15.6" FHD 144Hz RTX4050 6GB FreeDOS Gaming Laptop 83S0002YTR</a>
-        <a><b>Marka:</b> Lenovo</a>
-        <a><b>Fiyat:</b> 37939</a>
-        <a><b>Puan:</b> 4.1/5</a>
-        <a><b>Yorum Sayısı:</b> 9</a>
-    </div>
-    <div class="card">
-        <a><b>Ürün:</b> LOQE AMD Ryzen 7-7735HS 16GB 512GB SSD 15.6" FHD 144Hz RTX4050 6GB FreeDOS Gaming Laptop 83S0002YTR</a>
-        <a><b>Marka:</b> Lenovo</a>
-        <a><b>Fiyat:</b> 37939</a>
-        <a><b>Puan:</b> 4.1/5</a>
-        <a><b>Yorum Sayısı:</b> 9</a>
-    </div>
-    <div class="card">
-        <a><b>Ürün:</b> LOQE AMD Ryzen 7-7735HS 16GB 512GB SSD 15.6" FHD 144Hz RTX4050 6GB FreeDOS Gaming Laptop 83S0002YTR</a>
-        <a><b>Marka:</b> Lenovo</a>
-        <a><b>Fiyat:</b> 37939</a>
-        <a><b>Puan:</b> 4.1/5</a>
-        <a><b>Yorum Sayısı:</b> 9</a>
-    </div>
-
-    <div class="card">
-        <a><b>Ürün:</b> LOQE AMD Ryzen 7-7735HS 16GB 512GB SSD 15.6" FHD 144Hz RTX4050 6GB FreeDOS Gaming Laptop 83S0002YTR</a>
-        <a><b>Marka:</b> Lenovo</a>
-        <a><b>Fiyat:</b> 37939</a>
-        <a><b>Puan:</b> 4.1/5</a>
-        <a><b>Yorum Sayısı:</b> 9</a>
-    </div>
-    <div class="card">
-        <a><b>Ürün:</b> LOQE AMD Ryzen 7-7735HS 16GB 512GB SSD 15.6" FHD 144Hz RTX4050 6GB FreeDOS Gaming Laptop 83S0002YTR</a>
-        <a><b>Marka:</b> Lenovo</a>
-        <a><b>Fiyat:</b> 37939</a>
-        <a><b>Puan:</b> 4.1/5</a>
-        <a><b>Yorum Sayısı:</b> 9</a>
-    </div>
-    <div class="card">
-        <a><b>Ürün:</b> LOQE AMD Ryzen 7-7735HS 16GB 512GB SSD 15.6" FHD 144Hz RTX4050 6GB FreeDOS Gaming Laptop 83S0002YTR</a>
-        <a><b>Marka:</b> Lenovo</a>
-        <a><b>Fiyat:</b> 37939</a>
-        <a><b>Puan:</b> 4.1/5</a>
-        <a><b>Yorum Sayısı:</b> 9</a>
-    </div>
-    <div class="card">
-        <a><b>Ürün:</b> LOQE AMD Ryzen 7-7735HS 16GB 512GB SSD 15.6" FHD 144Hz RTX4050 6GB FreeDOS Gaming Laptop 83S0002YTR</a>
-        <a><b>Marka:</b> Lenovo</a>
-        <a><b>Fiyat:</b> 37939</a>
-        <a><b>Puan:</b> 4.1/5</a>
-        <a><b>Yorum Sayısı:</b> 9</a>
-    </div>
+    @Html.Raw(products);
 </div>

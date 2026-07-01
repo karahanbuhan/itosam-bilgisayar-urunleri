@@ -1,43 +1,53 @@
 ﻿using ExcelDataReader;
+using System.Collections;
 
 namespace UcuzBilgisayar
 {
     public class Product
     {
-        string name;
-        string brand;
-        float price;
-        float rating;
-        int reviews;
+        public string name;
+        public string brand;
+        public string price;
+        public string rating;
+        public string reviews;
+
+        public Product(string name, string brand, string price, string rating, string reviews)
+        {
+            this.name = name;
+            this.brand = brand;
+            this.price = price;
+            this.rating = rating;
+            this.reviews = reviews;
+        }
     }
 
     public class Products
     {
-        public string ReadFromExcel()
+        public static List<Product> ReadFromExcel(string filePath)
         {
-            using (var stream = File.Open("BILGISAYAR_URUNLERI.xlsx", FileMode.Open, FileAccess.Read))
+            using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
             {
-                // Auto-detect format, supports:
-                //  - Binary Excel files (2.0-2003 format; *.xls)
-                //  - OpenXml Excel files (2007 format; *.xlsx, *.xlsb)
                 using (var reader = ExcelReaderFactory.CreateReader(stream))
                 {
-                    // Choose one of either 1 or 2:
+                    List<Product> products = new List<Product>();
 
-                    // 1. Use the reader methods
                     do
                     {
                         while (reader.Read())
                         {
-                            // reader.GetDouble(0);
+                            Product product = new Product(
+                                    reader.GetString(1),
+                                    reader.GetString(2),
+                                    reader.GetString(3),
+                                    reader.GetString(4),
+                                    reader.GetString(5)
+                            );
+
+                            products.Add(product);
                         }
                     } while (reader.NextResult());
 
-                    // 2. Use the AsDataSet extension method
-                    var result = reader.AsDataSet();
-
-                    // The result of each spreadsheet is in result.Tables
-                    result.Tables.
+                    return products;
                 }
             }
         }
