@@ -1,5 +1,6 @@
 ﻿using ExcelDataReader;
 using System.Collections;
+using System.Text;
 
 namespace UcuzBilgisayar
 {
@@ -21,7 +22,7 @@ namespace UcuzBilgisayar
         }
     }
 
-    public class Products
+    public class ProductsHandler
     {
         public static List<Product> ReadFromExcel(string filePath)
         {
@@ -50,6 +51,17 @@ namespace UcuzBilgisayar
                     return products;
                 }
             }
+        }
+
+        public List<Product> products;
+
+        public ProductsHandler()
+        {
+            // This is required for excel reader
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
+            products = ReadFromExcel("BILGISAYAR_URUNLERI.xlsx");
+            products.RemoveAt(0); // First element is titles for each column so remove
         }
     }
 }

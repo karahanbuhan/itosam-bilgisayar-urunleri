@@ -30,21 +30,3 @@ app.MapRazorPages()
    .WithStaticAssets();
 
 app.Run();
-
-public partial class ProductsHandler {
-    public List<Product> products;
-
-    public ProductsHandler()
-    {
-        // This is required for excel reader
-        Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-
-        products = Products.ReadFromExcel("BILGISAYAR_URUNLERI.xlsx");
-        products.RemoveAt(0); // First element is titles for each column so remove
-    }
-
-    public List<Product> GetProducts()
-    {
-        return products;
-    } 
-}
