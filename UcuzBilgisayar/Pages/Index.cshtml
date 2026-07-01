@@ -11,26 +11,42 @@
     {
         products += string.Format("""
             <div class="card">
-                <a><b>Ürün:</b> {0}</a>
-                <a><b>Marka:</b> {1}</a>
-                <a><b>Fiyat:</b> {2}</a>
-                <a><b>Puan:</b> {3}</a>
-                <a><b>Yorum Sayısı:</b> {4}</a>
+                <b>Ürün:</b> {0}                
+                <br>          
+                <b>Marka:</b> {1}
+                <br>
+                <b>Fiyat:</b> {2}
+                <br>
+                <b>Puan:</b> {3}
+                <br>
+                <b>Yorum Sayısı:</b> {4}
             </div>
         """, product.name, product.brand, product.price, product.rating, product.reviews);
     }
 
 }
 
-<div class="text-center">
-    <h1 class="display-4">Ucuz Bilgisayar</h1>
-    <p>En ucuz bilgisayar fiyatlarını öğrenin.</a>.</p>
-</div>
+<div id="container">
+    <div class="text-center title">
+        <h1 class="display-4">Ucuz Bilgisayar</h1>
+        <p>En ucuz bilgisayar fiyatlarını öğrenin.</a></p>
+    </div>
 
-<div class="search-bar center">
-    <input type="text" id="search-bar" />
-</div>
+    <div class="search-bar center">
+        <input class="center" type="text" id="search-bar" />
+    </div>
 
-<div class="cards">
-    @Html.Raw(products);
+    <div id="info-and-sort">
+        <div class="info">
+            Bilgisayar ürünleri gösteriliyor.
+        </div>
+
+        <div id="sort-button">
+            <a>Varsayılan sıraya göre</a>
+        </div>
+    </div>
+
+    <div class="cards">
+        @Html.Raw(products)
+    </div>
 </div>

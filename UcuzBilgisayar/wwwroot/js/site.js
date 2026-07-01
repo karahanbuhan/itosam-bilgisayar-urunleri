@@ -3,7 +3,6 @@
 
 // Write your JavaScript code.
 var searchBar = document.getElementById("search-bar");
-
 var inputHandler = function (e) {
     var cards = document.getElementsByClassName("card");
     var input = searchBar.value;    
@@ -20,5 +19,13 @@ var inputHandler = function (e) {
     }
 
 }
-
 searchBar.addEventListener("input", inputHandler);
+
+var sortButton = document.getElementById("sort-button");
+var modes = ["default", "lowest_price", "highest_price", "highest_reviews", "highest_rating"];
+
+var sortHandler = function (e) {
+    // Show 5 options
+    var 
+    // use order property
+}
