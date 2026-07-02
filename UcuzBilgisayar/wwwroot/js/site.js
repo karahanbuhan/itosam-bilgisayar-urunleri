@@ -5,9 +5,7 @@
 var searchBar = document.getElementById("search-bar");
 var inputHandler = function (e) {
     var cards = document.getElementsByClassName("card");
-    var input = searchBar.value;    
-
-    console.log(input);
+    var input = searchBar.value;
 
     for (var i = 0; i < cards.length; i++) {
         cardHtml = cards[i].innerHTML.toString();
@@ -19,13 +17,25 @@ var inputHandler = function (e) {
     }
 
 }
-searchBar.addEventListener("input", inputHandler);
+
 
 var sortButton = document.getElementById("sort-button");
-var modes = ["default", "lowest_price", "highest_price", "highest_reviews", "highest_rating"];
+var sortOptions = document.getElementsByClassName("sort-options")[0];
 
-var sortHandler = function (e) {
-    // Show 5 options
-    var 
-    // use order property
+var modes = ["default", "lowest_price", "highest_price", "highest_reviews", "highest_ratings"];
+
+var sortButtonHandler = function (e) {
+    console.log("merhaba");
+
+    var display = sortOptions.style.display;
+    if (display == "inline-block") {
+        sortOptions.style.display = "none";
+    } else {
+        sortOptions.style.display = "inline-block";
+    }
+
+        // TODO: use order property
 }
+
+searchBar.addEventListener("input", inputHandler);
+sortButton.onclick = sortButtonHandler;
