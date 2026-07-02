@@ -17,6 +17,11 @@ html {
   min-height: 100%;
 }
 
+b {
+    color: #008cff;
+    font-size: 0.9rem;
+}
+
 body {
   margin-bottom: 60px;
 }
@@ -64,6 +69,7 @@ input#search-bar {
 
 #container {
     margin: auto;
+    margin-top: -7vh;
 }
 
 #info-and-sort {
