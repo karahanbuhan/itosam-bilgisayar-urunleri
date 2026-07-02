@@ -1,7 +1,4 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
+﻿// Arama Barı
 var searchBar = document.getElementById("search-bar");
 var inputHandler = function (e) {
     var cards = document.getElementsByClassName("card");
@@ -17,25 +14,68 @@ var inputHandler = function (e) {
     }
 
 }
+searchBar.addEventListener("input", inputHandler);
 
 
+
+// Sıralama Modları
+const SortModes = {
+    DEFAULT: "Varsayılan sıraya göre",
+    LOWEST_PRICE: "En düşük fiyat",
+    HIGHEST_PRICE: "En yüksek fiyat",
+    HIGHEST_REVIEWS: "En çok değerlendirilenler",
+    HIGHEST_RATINGS: "En yüksek puanlılar"
+}
+var mode = SortModes.DEFAULT;
+
+
+// Sıralama Butonları
+
+// En üstteki ana sıralama butonu
 var sortButton = document.getElementById("sort-button");
+var sortButtonA = sortButton.getElementsByTagName("a");
 var sortOptions = document.getElementsByClassName("sort-options")[0];
 
-var modes = ["default", "lowest_price", "highest_price", "highest_reviews", "highest_ratings"];
+// Sıralama butonunun ismini mevcut moda göre değiştirir
+function updateSortButtonName() {
+    sortButton.innerHTML = "<a>" + mode + "</a>";
+}
 
-var sortButtonHandler = function (e) {
-    console.log("merhaba");
-
+// Diğer sıralama seçeneklerini gizler
+function toggleSortOptionsMenu() {
     var display = sortOptions.style.display;
     if (display == "inline-block") {
         sortOptions.style.display = "none";
     } else {
         sortOptions.style.display = "inline-block";
     }
-
-        // TODO: use order property
 }
 
-searchBar.addEventListener("input", inputHandler);
+// Ana sıralama butonuna basınca menüyü açar veya kapatır
+var sortButtonHandler = function (e) {
+    toggleSortOptionsMenu();
+    updateSortButtonName();
+}
 sortButton.onclick = sortButtonHandler;
+
+
+var sortOptionButtons = document.getElementsByClassName("sort-button");
+var sortOptionsButtonHandler = function (e) {
+    var modeCls = e.currentTarget.classList[0];
+
+    if (modeCls == "sort-lowest-price") {
+        mode = SortModes.LOWEST_PRICE;
+    } else if (modeCls == "sort-highest-price") {
+        mode = SortModes.HIGHEST_PRICE;
+    } else if (modeCls == "sort-highest-reviews") {
+        mode = SortModes.HIGHEST_REVIEWS;
+    } else if (modeCls == "sort-highest-ratings") {
+        mode = SortModes.HIGHEST_RATINGS;
+    }
+
+    updateSortButtonName();
+}
+
+for (var i = 0; i < sortOptionButtons.length; i++) {
+    sortOptionButtons[i].onclick = sortOptionsButtonHandler;
+}
