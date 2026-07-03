@@ -62,14 +62,25 @@ input#search-bar {
     margin-left: 1.3vw;
     margin-right: 1.3vw;
     border-style: solid;
-    font-size: 1.0rem;
+    font-size: 1.1rem;
     width: 12vw;
     margin-bottom: 5vh;
+}
+    .card:hover {
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform: scale(1.1);
 }
 
 #container {
     margin: auto;
-    margin-top: -7vh;
+    margin-top: -6.5vh;
 }
 
 #info-and-sort {
