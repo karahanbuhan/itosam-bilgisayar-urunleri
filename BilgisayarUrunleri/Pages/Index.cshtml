@@ -5,11 +5,20 @@
 }
 
 @{
-    var products = "";
-    ProductsHandler handler = new ProductsHandler();
-    foreach (Product product in handler.products)
-    {
-        products += string.Format("""
+	var products = "";
+
+	ProductsHandler handler = new ProductsHandler();
+	foreach (Product product in handler.products)
+	{
+		String[] price = product.price.Split(",");
+		String priceWhole = price[0];
+		for (int i = priceWhole.Length / 3; i > 0; i--)
+		{
+			priceWhole.Insert(i * 3, ".");
+		}
+
+
+		products += string.Format("""
             <div class="card">
                 <b>Ürün:</b> {0}                
                 <br>          
@@ -21,7 +30,7 @@
                 <br>
                 <b>Yorum Sayısı:</b> {4}
             </div>
-        """, product.name, product.brand, product.price, product.rating, product.reviews);
+        """, product.name, product.brand, priceWhole, product.rating, product.reviews);
     }
 
 }
@@ -196,7 +205,7 @@
 <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
 <!--End Back To Top Button-->
 <footer class="page-footer">
-	<p class="mb-0">Copyright © 2026. All right reserved.</p>
+	<p class="mb-0">Copyright © 2026. Tüm hakları saklıdır.</p>
 </footer>
 </div>
 <!--end wrapper-->

@@ -39,7 +39,7 @@ namespace UcuzBilgisayar
                             Product product = new Product(
                                     reader.GetString(1),
                                     reader.GetString(2),
-                                    reader.GetString(3),
+                                    reader.GetString(3).Replace(".", ","),
                                     reader.GetString(4),
                                     reader.GetString(5)
                             );
