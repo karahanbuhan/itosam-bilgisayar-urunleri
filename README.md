@@ -5,4 +5,5 @@ Selenium kullanarak Hepsiburada, Trendyol sitelerinden bilgisayar ürünlerini a
 
 # Veriler
 Şu anda yaklaşık 100 adet bilgisayar ürünü verisi kazılmıştır, bu miktar gerekirse arttırılacak ve dinamik hale getirilecektir.
+
 <img width="509" height="543" alt="Screenshot 2026-07-01 120052" src="https://github.com/user-attachments/assets/05dc94a1-0994-4814-92df-15975c87443e" />
