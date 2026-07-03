@@ -12,9 +12,15 @@
 	{
 		String[] price = product.price.Split(",");
 		String priceWhole = price[0];
-		for (int i = priceWhole.Length / 3; i > 0; i--)
+		int j = 0;
+		for (int i = priceWhole.Length - 1; i > 0; i--)
 		{
-			priceWhole.Insert(i * 3, ".");
+			if (j == 2)
+			{
+				priceWhole = priceWhole.Insert(i, ",");
+				j = -1;
+			}
+			j++;
 		}
 
 
@@ -24,7 +30,7 @@
                 <br>          
                 <b>Marka:</b> {1}
                 <br>
-                <b>Fiyat:</b> {2}
+                <b>Fiyat:</b> {2}₺
                 <br>
                 <b>Puan:</b> {3}
                 <br>
