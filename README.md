@@ -9,7 +9,7 @@ Selenium kullanarak Hepsiburada, Trendyol sitelerinden bilgisayar ürünlerini a
 
 <img width="509" height="543" alt="Screenshot 2026-07-01 120052" src="https://github.com/user-attachments/assets/05dc94a1-0994-4814-92df-15975c87443e" />
 
-## Kurulum
+## Kurulum & Çalıştırma
 ASP.NET kullanarak web üzerinden sayfayı hostlamadan önce Python ile yazılmış veri kazımacıyı çalıştırmanız gerekmektedir. Yine de IDE olarak Visual Studio üzerinden projenin GitHub adresi kullanılarak klonlanması ve başlatılması önerilir. Ayrıca ASP.NET, Python gibi gerekli frameworkleri Visual Studio Installer üzerinden indirmeniz gerekmektedir.
 
 0. Visual Studio ile File > Clone Repository seçeneğini seçin. Repository location olarak bu repository'nin adresini yani https://github.com/karahanbuhan/itosam-bilgisayar-urunleri.git girin ve uygun dizini seçtikten sonra Clone butonuna basın.
