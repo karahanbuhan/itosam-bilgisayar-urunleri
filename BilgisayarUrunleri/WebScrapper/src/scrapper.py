@@ -128,15 +128,24 @@ def scrap_hepsiburada(url):
 def main():
     computerList = []
     
+    print("%0")
     computerList += scrap_hepsiburada("https://www.hepsiburada.com/ara?q=bilgisayar")
+    print("%10")
     computerList += scrap_hepsiburada("https://www.hepsiburada.com/ara?q=bilgisayar ürünleri")
+    print("%20")
     computerList += scrap_hepsiburada("https://www.hepsiburada.com/ara?q=laptop")
+    print("%30")
     computerList += scrap_hepsiburada("https://www.hepsiburada.com/ara?q=bilgisayar+aksesuarlar%C4%B1")
+    print("%40")
     computerList += scrap_trendyol("https://www.trendyol.com/sr?q=bilgisayar&qt=bilgisayar&st=bilgisayar&os=1")
+    print("%50")
     computerList += scrap_trendyol("https://www.trendyol.com/sr?q=bilgisayar&qt=bilgisayar ürünleri&st=bilgisayar&os=1")
+    print("%70")
     computerList += scrap_trendyol("https://www.trendyol.com/sr?q=bilgisayar&qt=laptop&st=bilgisayar&os=1")
+    print("%80")
     computerList += scrap_trendyol("https://www.trendyol.com/sr?q=bilgisayar&qt=bilgisayar aksesuarları&st=bilgisayar&os=1")
-    
+    print("%100")
+
     computerList = list(set(computerList))
     
     df = pd.DataFrame([(f.name, f.brand, f.price, f.score, f.reviews) for f in computerList], columns=['Ürün adı', 'Marka', 'Fiyat (TL)', 'Ürün puanı', 'Yorum sayısı'])
